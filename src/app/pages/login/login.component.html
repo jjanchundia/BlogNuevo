@@ -1,0 +1,21 @@
+
+
+
+<body class="text-center">
+  <form [formGroup]="loginusuario" (ngSubmit)="iniciarSesion()" class="form-signin">
+    <img class="mb-4" src="https://getbootstrap.com/docs/4.0/assets/brand/bootstrap-solid.svg" alt="" width="72" height="72">
+    <h1 class="h3 mb-3 font-weight-normal">Inicio de Sesión</h1>
+    <label for="inputEmail" class="sr-only">Email</label>
+    <input formControlName="correo" placeholder="Correo" type="text" class="form-control" id="correo" aria-describedby="emailHelp">
+      <span *ngIf="loginusuario.get('correo')?.invalid && loginusuario.get('correo')?.touched" class="text-danger">
+          El Correo es requerido
+      </span>
+    <label for="" class="sr-only">Contraseña</label>
+    <input formControlName="password" type="text" placeholder="password" class="form-control" id="password" aria-describedby="password">
+      <span *ngIf="loginusuario.get('password')?.invalid && loginusuario.get('password')?.touched" class="text-danger">
+          El password es requerido
+      </span>
+    <button type="submit" class="btn btn-lg btn-primary btn-block">Iniciar Sesión</button>
+    <p class="mt-5 mb-3 font-weight-normal">&copy; 2021-2022</p>
+  </form>
+</body>
